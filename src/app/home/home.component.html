@@ -1,0 +1,25 @@
+<p>home works!</p>
+<p>Xin chao {{name}}</p>
+<!-- <div *ngFor ="let student of students">
+    <p>{{student.name}}, {{student.home}}</p>
+</div> -->
+<table>
+    <tr>
+        <th>City</th>
+        <th>Temp</th>
+    </tr>
+    <tr *ngFor="let c of cities">
+        <td>{{c.name}}</td>
+        <td *ngIf="c.temp <=0; then lowtemp; else hightemp"></td>
+        
+        <ng-template #lowtemp>
+            <div class="temp">
+                <td>{{c.temp}}</td>
+            </div>
+        </ng-template>
+
+        <ng-template #hightemp>
+            <td>{{c.temp}}</td>
+        </ng-template>
+    </tr>
+</table>
