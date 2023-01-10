@@ -10,8 +10,7 @@
     </tr>
     <tr *ngFor="let c of cities">
         <td>{{c.name}}</td>
-        <td *ngIf="c.temp <=0; then lowtemp; else hightemp"></td>
-        
+        <!-- <td *ngIf="c.temp <=0; then lowtemp; else hightemp"></td>
         <ng-template #lowtemp>
             <div class="temp">
                 <td>{{c.temp}}</td>
@@ -20,6 +19,7 @@
 
         <ng-template #hightemp>
             <td>{{c.temp}}</td>
-        </ng-template>
+        </ng-template> -->
+        <div [ngClass]="{'temp': c.temp <=0}"><td>{{c.temp}}</td></div>
     </tr>
 </table>
